@@ -10,3 +10,18 @@ Using npm pakages
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.5",
     "validator": "^11.1.0"
+
+Avalable API's
+  using MongoDB
+    get : contact.index,
+    post : contact.create,
+    get : contact.show,
+    patch : contact.edit,
+    put : contact.update,
+    delete : contact.delete
+  using Authentication JWT token
+    post : user.register
+    post : user.login //and return token
+    get : user:show 
+    post : user.logout
+    
