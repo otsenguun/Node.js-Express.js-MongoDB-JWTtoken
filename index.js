@@ -3,6 +3,9 @@ let express = require('express');
 // Import Body parser
 let bodyParser = require('body-parser');
 // Initialise the app
+let cookieParser = require('cookie-parser');
+// Initialise the app
+
 let app = express();
 require('dotenv').config()
 
@@ -26,12 +29,13 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 // Setup server port
 var port = process.env.PORT || 8080;
 
 // Send message for default URL
 app.get('/', (req, res) => res.send('Hello World with Express'));
-
+app.get('/api/home', (req, res) => res.json({message:'pizda'}));
 
 // Use Api routes in the App
 // app.use('/api', apiRoutes);

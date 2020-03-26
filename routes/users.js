@@ -37,7 +37,8 @@ router.post('/login', async(req, res) => {
         }
         const token = await user.generateAuthToken()
         // console.log(token);
-        res.json({ user, token })
+        // res.json({ user, token })
+        res.cookie('token',token,{httpOnly:true}).json({ user, token });
     } catch (error) {
         // console.log(error)
         res.status(400).json(error)
